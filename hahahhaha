@@ -1,0 +1,19 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+// Function to convert infix expression to postfix expression
+string infixToPostfix(string infixExpression) {
+  // Create a stack to store operators
+  stack<char> st;
+
+  // Create a string to store the postfix expression
+  string postfixExpression;
+
+  // Loop through the infix expression
+  for (int i = 0; i < infixExpression.length(); i++) {
+    // If the current character is an operand, append it to the postfix expression
+    if (isalnum(infixExpression[i])) {
+      postfixExpression += infixExpression[i];
+    } else if (infixExpression[i] == '(') {
